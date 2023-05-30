@@ -41,6 +41,11 @@ contract RealEstate {
         propertyIds.push(_propertyId); // Corrected from 'propertiyIds'
     }
 
+    /**
+     * @dev Buys a property by transferring the ownership and payment to the property owner.
+     * @param _propertyId The ID of the property to buy.
+     */
+
     function buyProperty(uint256 _propertyId) public payable {
         Property storage property = properties[_propertyId];
 
