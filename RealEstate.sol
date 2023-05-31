@@ -18,7 +18,7 @@ contract RealEstate {
 
     mapping(uint256 => Property) public properties;
 
-    uint256[] public propertyIds; // Renamed from 'properties'
+    uint256[] public propertyIds;
     event PropertySold(uint256 propertyId);
 
     function listPropertyForSale(
@@ -34,11 +34,11 @@ contract RealEstate {
             forSale: true,
             name: _name,
             description: _description,
-            location: _location // Added missing 'location' assignment
+            location: _location 
         });
 
         properties[_propertyId] = newProperty;
-        propertyIds.push(_propertyId); // Corrected from 'propertiyIds'
+        propertyIds.push(_propertyId);
     }
 
     /**
@@ -55,7 +55,6 @@ contract RealEstate {
         property.owner = msg.sender;
         property.forSale = false;
 
-        payable(property.owner).transfer(property.price);
-        emit PropertySold(_propertyId);
+        payabrr
     }
 }
